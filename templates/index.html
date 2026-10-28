@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b16">
+  <meta name="description" content="NEXORA — a modern digital space built for ideas, projects and possibilities.">
+  <title>NEXORA — Your Digital Universe</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="NEXORA home"><span class="brand-mark">N</span>NEXORA<span class="brand-dot">.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="navLinks" class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#explore">Explore</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">◐ Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR NEXT CHAPTER STARTS HERE</div>
+        <h1>Ideas become<br><span class="gradient-text">extraordinary.</span></h1>
+        <p class="hero-lead">A digital universe for curious minds, bold projects and limitless possibilities. Explore what you can build next.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#explore">Explore the universe <span>↗</span></a>
+          <a class="btn btn-secondary" href="#features">Discover features</a>
+        </div>
+        <div class="hero-proof"><span class="proof-icon">✦</span><span>Built for creativity.</span><span class="proof-divider">•</span><span>Made to grow.</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Abstract glowing digital orb">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="orb"><div class="orb-core"></div><span class="orb-spark spark-a">✦</span><span class="orb-spark spark-b">✧</span></div>
+        <div class="float-card float-card-top"><span class="mini-icon">✦</span><span><b>Think bigger</b><small>Make it happen</small></span></div>
+        <div class="float-card float-card-bottom"><span class="status-dot"></span><span><b id="serverStatus">Checking system…</b><small>Live demo status</small></span></div>
+      </div>
+    </section>
+
+    <section class="stats section" aria-label="Website highlights">
+      <div class="stat"><strong>01</strong><span>One bold vision</span></div>
+      <div class="stat"><strong>∞</strong><span>Ideas to explore</span></div>
+      <div class="stat"><strong id="clock">--:--:--</strong><span>Your local time</span></div>
+    </section>
+
+    <section class="section content-section" id="features">
+      <div class="section-heading">
+        <div class="eyebrow">WHAT MAKES IT SPECIAL</div>
+        <h2>Small details. <span class="gradient-text">Big energy.</span></h2>
+        <p>A responsive starting point you can customize and expand as your skills grow.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="glass-card"><div class="card-icon purple">⌘</div><h3>Modern by design</h3><p>Glass-style panels, glowing accents and a clean layout that adapts to your screen.</p><span class="card-tag">DESIGN</span></article>
+        <article class="glass-card"><div class="card-icon blue">⚡</div><h3>Interactive experience</h3><p>Try the search, theme switch, mobile navigation and live server status.</p><span class="card-tag">JAVASCRIPT</span></article>
+        <article class="glass-card"><div class="card-icon pink">⌁</div><h3>Ready to grow</h3><p>A Python-powered foundation that you can extend with real data and new routes.</p><span class="card-tag">PYTHON</span></article>
+      </div>
+    </section>
+
+    <section class="section content-section explore-section" id="explore">
+      <div class="section-heading">
+        <div class="eyebrow">YOUR DIGITAL PLAYGROUND</div>
+        <h2>What will you <span class="gradient-text">discover?</span></h2>
+        <p>Search these starter ideas or add your own cards in the HTML.</p>
+      </div>
+      <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search ideas, e.g. design…" aria-label="Search ideas"><kbd>SEARCH</kbd></div>
+      <div class="idea-grid" id="ideaGrid">
+        <article class="idea-card" data-search="web design creative layout"><span class="idea-number">01 / CREATE</span><div class="idea-symbol">◈</div><h3>Web Design</h3><p>Turn a blank page into a bold digital experience.</p><a href="#contact">Build an idea <span>↗</span></a></article>
+        <article class="idea-card" data-search="code development technology"><span class="idea-number">02 / BUILD</span><div class="idea-symbol">⌘</div><h3>Code Lab</h3><p>Learn, experiment and bring useful tools to life.</p><a href="#contact">Build an idea <span>↗</span></a></article>
+        <article class="idea-card" data-search="music video creative media"><span class="idea-number">03 / CREATE</span><div class="idea-symbol">♫</div><h3>Creative Studio</h3><p>Explore concepts for music, video and storytelling.</p><a href="#contact">Build an idea <span>↗</span></a></article>
+        <article class="idea-card" data-search="learning study skills"><span class="idea-number">04 / LEARN</span><div class="idea-symbol">✧</div><h3>Learning Hub</h3><p>Make space for new skills and your next big question.</p><a href="#contact">Build an idea <span>↗</span></a></article>
+      </div>
+      <p id="noResults" class="no-results" hidden>No matching ideas. Try another search.</p>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-panel">
+        <div><div class="eyebrow">LET'S MAKE SOMETHING</div><h2>Have an idea?<br><span class="gradient-text">Let's start here.</span></h2><p>This demo form connects to the Python backend. It shows a response, but doesn't email or permanently store messages yet.</p></div>
+        <form id="contactForm">
+          <label for="name">Your name</label><input id="name" name="name" maxlength="80" required placeholder="Enter your name">
+          <label for="message">Your idea</label><textarea id="message" name="message" maxlength="1000" rows="4" required placeholder="Tell us what you want to create…"></textarea>
+          <button class="btn btn-primary form-submit" type="submit">Send message <span>↗</span></button>
+          <p id="formResponse" class="form-response" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">N</span>NEXORA<span class="brand-dot">.</span></a><p>Made with curiosity and code.</p><a href="#home" class="back-top">Back to top ↑</a></footer>
+</body>
+</html>
